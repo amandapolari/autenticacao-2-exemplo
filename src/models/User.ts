@@ -1,33 +1,33 @@
 export enum USER_ROLES {
-  NORMAL = "NORMAL",
-  ADMIN = "ADMIN"
+    NORMAL = 'NORMAL',
+    ADMIN = 'ADMIN',
 }
 
 export interface UserDB {
-  id: string,
-  name: string,
-  email: string,
-  password: string,
-  role: USER_ROLES,
-  created_at: string
+    id: string;
+    name: string;
+    email: string;
+    password: string;
+    role: USER_ROLES;
+    created_at: string;
 }
 
 // é o modelo de User que o front receberá (sem password e createdAt camelCase)
 export interface UserModel {
-  id: string,
-  name: string,
-  email: string,
-  role: USER_ROLES,
-  createdAt: string
+    id: string;
+    name: string;
+    email: string;
+    role: USER_ROLES;
+    createdAt: string;
 }
 
 export interface TokenPayload {
-  id: string,
-  name: string,
-  role: USER_ROLES
+    id: string;
+    name: string;
+    role: USER_ROLES;
 }
 
-export class User {    
+export class User {
     constructor(
         private id: string,
         private name: string,
@@ -38,51 +38,51 @@ export class User {
     ) {}
 
     public getId(): string {
-        return this.id
+        return this.id;
     }
-    
+
     public setId(value: string): void {
-        this.id = value
+        this.id = value;
     }
 
     public getName(): string {
-        return this.name
+        return this.name;
     }
 
     public setName(value: string): void {
-        this.name = value
+        this.name = value;
     }
 
     public getEmail(): string {
-        return this.email
+        return this.email;
     }
 
     public setEmail(value: string): void {
-        this.email = value
+        this.email = value;
     }
 
     public getPassword(): string {
-        return this.password
+        return this.password;
     }
 
     public setPassword(value: string): void {
-        this.password = value
+        this.password = value;
     }
 
     public getRole(): USER_ROLES {
-        return this.role
+        return this.role;
     }
 
     public setRole(value: USER_ROLES): void {
-        this.role = value
+        this.role = value;
     }
 
     public getCreatedAt(): string {
-        return this.createdAt
+        return this.createdAt;
     }
 
     public setCreatedAt(value: string): void {
-        this.createdAt = value
+        this.createdAt = value;
     }
 
     // para facilitar nossa vida, temos o método que gera um UserDB
@@ -93,8 +93,8 @@ export class User {
             email: this.email,
             password: this.password,
             role: this.role,
-            created_at: this.createdAt
-        }
+            created_at: this.createdAt,
+        };
     }
 
     // para facilitar nossa vida, temos o método que gera um UserModel
@@ -104,7 +104,7 @@ export class User {
             name: this.name,
             email: this.email,
             role: this.role,
-            createdAt: this.createdAt
-        }
+            createdAt: this.createdAt,
+        };
     }
 }
